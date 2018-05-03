@@ -5,7 +5,7 @@ const API_CLIENT_ID = '20ac9b646042b6aeb8e9c5b7f676e89f44dbd710b5d3930ef8be9c800
 const API_SECRET = '0801f1f36de83780071d0ccded2f5e111f5ed783983a6fe57e7b580fec4fa122';
 // const TRANSPORT_TYPES = ['bike', 'motorbike', 'car', 'cargobike', 'cargobikexl', 'motorbikexl'];
 
-const stuart = new Stuart({api_url: API_SANDBOX_URL, client_id: API_CLIENT_ID, client_secret: API_SECRET});
+const stuart = new Stuart(API_SANDBOX_URL, {client_id: API_CLIENT_ID, client_secret: API_SECRET});
 
 stuart.createJob({
   assignment_code: "",

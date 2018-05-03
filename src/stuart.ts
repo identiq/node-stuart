@@ -4,27 +4,27 @@ import {stringify} from 'query-string';
 export default class Stuart {
 
   client_id: string;
-  api_url: string;
   api_scope: string;
   api_grant: string;
   client_secret: string;
+  api_url: string;
   bearer: string;
 
-  constructor(settings: { api_url: string, client_id: string, client_secret: string }) {
+  constructor(api_url: string = "https://api.stuart.com", credentials: { client_id: string, client_secret: string }) {
 
-    if (!settings.client_id) {
+    if (!credentials.client_id) {
       throw new Error('API Client Id missing')
     }
 
-    if (!settings.client_secret) {
+    if (!credentials.client_secret) {
       throw new Error('API Client Secret missing')
     }
 
     this.api_scope = 'api';
     this.api_grant = 'client_credentials';
-    this.api_url = settings.api_url;
-    this.client_id = settings.client_id;
-    this.client_secret = settings.client_secret;
+    this.api_url = api_url;
+    this.client_id = credentials.client_id;
+    this.client_secret = credentials.client_secret;
   }
 
   async authenticate(client_id: string, client_secret: string): Promise<void> {
