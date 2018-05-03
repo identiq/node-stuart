@@ -32,7 +32,8 @@ stuart.createJob({
   transport_type: "bike"
 })
   .then((res) => {
-  console.log(`Got a job : ${res.data}`);
+  //console.log(res.data);
+  console.log(`Got a job for ${res.data.pricing.price_tax_included} ${res.data.pricing.currency}`);
 }).catch((err) => {
   console.log(err.response.data);
 });
