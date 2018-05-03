@@ -8,7 +8,6 @@ const API_SECRET = '0801f1f36de83780071d0ccded2f5e111f5ed783983a6fe57e7b580fec4f
 const stuart = new Stuart({api_url: API_SANDBOX_URL, client_id: API_CLIENT_ID, client_secret: API_SECRET});
 
 stuart.createJob({
-  source: "dashboard",
   assignment_code: "",
   pickups: [{
     address: "1 Boulevard de Bonne Nouvelle, 75010 Paris, France",
@@ -33,7 +32,7 @@ stuart.createJob({
   transport_type: "bike"
 })
   .then((res) => {
-  console.log(`Got a job : ${res.data});
+  console.log(`Got a job : ${res.data}`);
 }).catch((err) => {
   console.log(err.response.data);
 });
